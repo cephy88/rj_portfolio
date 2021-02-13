@@ -10,8 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-import dj_database_url
-import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +26,7 @@ SECRET_KEY = '=#rr9!nyds1uw&=gzlm(j1e2a=)2v7n5au@89$b0_@oq96s#i_'
 #DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['rjportfolio2021.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -132,4 +130,4 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
