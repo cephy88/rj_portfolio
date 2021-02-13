@@ -10,7 +10,6 @@ from wsgiref.util import FileWrapper
 import tweepy
 from tweepy import OAuthHandler
 from .forms import MyForm
-import win32com.client
 import pythoncom
 from pdf2image import convert_from_path
 import gzip
