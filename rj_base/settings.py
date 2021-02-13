@@ -28,7 +28,7 @@ SECRET_KEY = '=#rr9!nyds1uw&=gzlm(j1e2a=)2v7n5au@89$b0_@oq96s#i_'
 #DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['rjportfolio2021']
+ALLOWED_HOSTS = ['rjportfolio2021.herokuapp.com']
 
 
 # Application definition
