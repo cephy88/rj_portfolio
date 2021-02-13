@@ -10,7 +10,6 @@ from wsgiref.util import FileWrapper
 import tweepy
 from tweepy import OAuthHandler
 from .forms import MyForm
-import pythoncom
 from pdf2image import convert_from_path
 import gzip
 
@@ -29,51 +28,7 @@ def datascience(request):
 	return render(request, 'base/datascience.html')
 
 def webscraping(request):
-	if request.method == 'POST':
-		form = MyForm(request.POST) # if post method then form will be validated
-		if form.is_valid():
-			cd = form.cleaned_data
-			num1 = cd.get('a')
-
-			access_token = '1133757969357688832-CxPjqq25L8pJgrRUpBWSgDQoZOgPzd'
-			access_token_secret = 'ZSKYGxFRCTGsRqpHcOWUdgh33qE2tDasHZVu0MxW3kFwI'
-			consumer_key = 'LgAUFJsDHFks5AoeF26qvDg9o'
-			consumer_secret = 'qFESnWYqxWXMxdOgbXP58JutGcvK228YG3MpLsdDsQsFO1zpMn'
-
-			auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-			auth.set_access_token(access_token, access_token_secret)
-
-			api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
-
-			tweets = []
-
-			for tweet in tweepy.Cursor(api.search, q=num1, count=1, since='2020-02-28').items(100):
-				try: 
-					data = [tweet.created_at, tweet.id, tweet.text, tweet.user._json['screen_name'], tweet.user._json['name'], tweet.user._json['created_at'], tweet.entities['urls']]
-					print(data)
-					data = tuple(data)
-					print(data)
-					tweets.append(data)
-
-				except tweepy.TweepError as e:
-					print(e.reason)
-					continue
-
-				except StopIteration:
-					break
-
-			df = pd.DataFrame(tweets, columns = ['created_at','tweet_id', 'tweet_text', 'screen_name', 'name', 'account_creation_date', 'urls'])
-			df.to_csv('static/datascience/webscraping/twitter.csv', index=False) 
-			dictionary = df.to_dict()
-
-			books = [
-						{ "id":1, "name": "Python", "author":"idk", "copies": 1},
-						{ "id":2, "name": "Java", "author":"idk2", "copies": 3}
-						]
-			return render(request, 'base/datascience/webscraping.html', {'df': dictionary,'form': form})
-	else:
-		form = MyForm() 
-	return render(request, 'base/datascience/webscraping.html',{'form': form})
+	return render(request, 'base/datascience/webscraping.html')
 	
 def twitter_scrape(request):
 	filename = 'static/datascience/webscraping/twitter.csv'
