@@ -1,0 +1,71 @@
+{% extends "base/home.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+<body>
+
+
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Data Processing.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Data processing is the conversion of data into usable and desired form. This conversion or “processing” is carried out using a predefined sequence of operations either manually or automatically. Most of the processing is done by using computers and thus done automatically. The output or “processed” data can be obtained in various forms. Example of these forms include image, graph, table, vector file, audio, charts or any other desired format. The form obtained depends on the software or method of data processing used. When done itself it is referred to as automatic data processing. Data center is the key component as it enables processing of data, data storage, data access, data sharing and data analysis etc.</p>
+    
+    
+    <p><b>List of applications</b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding ">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="{% static 'images/webscraping.png' %}"alt="Web Scraping" style="width:50%">
+        <div class="w3-container">
+          <a href="{% url 'webscraping' %}"  class="w3-large w3-text-red"><b>Web Scraping.</b></a>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>Crawls and Scrape Data from websites</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="{% static 'images/convertpdf.png' %}" alt="Convert Pdf" style="width:50%">
+        <div class="w3-container">
+          <a href="{% url 'convertpdf' %}" class="w3-large w3-text-red" ><b>Convert PDF.</b></a>
+          <p class="w3-opacity">Designer</p>
+          <p>Converts PDF File into Excel and  CSV File Format</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="{% static 'images/converthtml.png' %}" alt="Convert HTML Table" style="width:50%">
+        <div class="w3-container">
+          <a href="{% url 'converthtml' %}" class="w3-large w3-text-red" ><b>Convert HTML.</b></a>
+          <p class="w3-opacity">Designer</p>
+          <p>Converts  HTML Table into Excel and CSV File Format</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- credits
+  <p>- https://planningtank.com/computer-applications/data-processing#:~:text=Data%20processing%20is%20the%20conversion,computers%20and%20thus%20done%20automatically.</p>
+  <p>Icons from "https://www.flaticon.com/authors/surang"</p> -->
+
+</body>
+</html>
+
+
+{% endblock %}

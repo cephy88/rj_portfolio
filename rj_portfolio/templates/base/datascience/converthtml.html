@@ -1,0 +1,79 @@
+{% extends "base/home.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* padding-top: 56.25%; 16:9 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="w3-container" id="packages" style="margin-top:10px">
+        <h1 class="w3-jumbo"><b> Converting HTML Table </b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b> CSV & XLSX</b></h1>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+        <p>The Sample Website link is "https://www.pds.com.ph/index.html%3Fpage_id=1389.html". The system converts a Website's html table into and Excel file format  and Csv file format</p>
+      </div>
+    
+      <div class="w3-row-padding">
+        <div class="w3-half w3-margin-bottom">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">THE WEBSITE </li>
+
+            <div class="container"> 
+                <iframe src="https://www.pds.com.ph/index.html%3Fpage_id=1389.html" height="700px" width="715">
+                </iframe>
+              </div>
+                
+          </ul>
+        </div>
+            
+        <div class="w3-half">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-red w3-xlarge w3-padding-32">Convert to</li>
+            
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+                <button type="button" class="w3-button w3-red w3-padding-large w3-hover-black">
+                    <a href="{% url 'converthtml_csv' %}" >.csv</a>
+                </button>
+                <button type="button" class="w3-button w3-red w3-padding-large w3-hover-black"> 
+                    <a href="{% url 'converthtml_excel' %}">.xlsx</a>
+                </button>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+        
+
+
+
+
+</body>
+</html>
+
+
+{% endblock %}
