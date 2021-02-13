@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     #path('', views.base, name='base'),
-    path('info', views.resume, name='resume'),
+    path('', views.resume, name='resume'),
     path('datascience', views.datascience, name='datascience'),
     path('webscraping', views.webscraping, name='webscraping'),
     path('twitter_scrape', views.twitter_scrape, name='twitter_scrape'),
